@@ -8,7 +8,12 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(to bottom, #fff9c4, #ffe082);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 105, 180, 0.28), transparent 45%),
+    radial-gradient(circle at 82% 18%, rgba(171, 71, 188, 0.22), transparent 50%),
+    radial-gradient(circle at 50% 88%, rgba(255, 112, 67, 0.18), transparent 55%),
+    linear-gradient(to bottom, #fff3f8, #f3e5f5);
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,12 +60,12 @@ body {
 svg { width: 100%; height: auto; max-width: 400px; }
 .petalo {
   fill: url(#gradPetalo);
-  stroke: #fbc02d;
+  stroke: #6a1b9a;
   stroke-width: 1.6;
   transition: transform 0.6s ease, opacity 0.6s ease;
   transform-box: fill-box;
   transform-origin: center;
-  filter: drop-shadow(0 0 7px rgba(255,193,7,0.75));
+  filter: drop-shadow(0 0 7px rgba(142,36,170,0.75));
   cursor: pointer;
 }
 .petalo.removido {
@@ -72,11 +77,15 @@ svg { width: 100%; height: auto; max-width: 400px; }
 
 .centro {
   fill: url(#gradCentro);
-  stroke: #f57f17;
+  stroke: #ad1457;
   stroke-width: 2.5;
-  filter: drop-shadow(0 0 10px rgba(245,127,23,0.8));
+  filter: drop-shadow(0 0 12px rgba(173,20,87,0.35)) drop-shadow(0 0 18px rgba(142,36,170,0.35));
 }
-.detalles-centro { fill: #ffecb3; opacity: 0.9; }
+.detalles-centro {
+  fill: #ffe082;
+  opacity: 0.98;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.28)) drop-shadow(0 0 6px rgba(142,36,170,0.25));
+}
 
 .cartelito {
   margin-top: 14px;
@@ -115,7 +124,7 @@ svg { width: 100%; height: auto; max-width: 400px; }
   position: fixed;
   bottom: -50px;
   font-size: 1.8rem;
-  color: #fdd835;
+  color: #8e24aa;
   animation: subir 6s linear infinite;
   pointer-events: none;
   z-index:1000;
@@ -301,7 +310,7 @@ svg { width: 100%; height: auto; max-width: 400px; }
 </div>
 
 <div class="pantalla-inicio" id="inicio">
-  <h1>Bienvenida a tu sorpresa Milii 🌼</h1>
+  <h1>Bienvenida a tu sorpresa Solcito 🌼</h1>
   <p>Haz click en continuar niña bellaa</p>
   <button class="btn" onclick="mostrarFlor()">Continuar</button>
 </div>
@@ -310,15 +319,16 @@ svg { width: 100%; height: auto; max-width: 400px; }
   <svg viewBox="0 0 250 400" role="img" aria-label="Flor amarilla interactiva">
     <defs>
       <linearGradient id="gradPetalo" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#ffee58"/>
-        <stop offset="100%" stop-color="#ffc107"/>
+        <stop offset="0%" stop-color="#e1bee7"/>
+        <stop offset="100%" stop-color="#8e24aa"/>
       </linearGradient>
       <radialGradient id="gradCentro" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="#ffea00"/>
-        <stop offset="100%" stop-color="#ff8f00"/>
+        <stop offset="0%" stop-color="#fff59d"/>
+        <stop offset="45%" stop-color="#ffca28"/>
+        <stop offset="100%" stop-color="#f06292"/>
       </radialGradient>
       <g id="petaloShape">
-        <path d="M0 -70 C18 -48 18 0 0 34 C-18 0 -18 -48 0 -70 Z"/>
+        <path d="M0 -78 C20 -70 34 -48 30 -26 C26 -6 16 16 0 44 C-16 16 -26 -6 -30 -26 C-34 -48 -20 -70 0 -78 Z"/>
       </g>
     </defs>
     <rect x="120" y="180" width="8" height="200" fill="#388e3c" rx="3"/>
@@ -326,25 +336,71 @@ svg { width: 100%; height: auto; max-width: 400px; }
     <path d="M124 300 Q94 280, 74 310 Q94 340, 124 300 Z" fill="#4caf50" stroke="#388e3c" stroke-width="1"/>
 
     <g id="petalos" transform="translate(125 125)">
-      <!-- 16 pétalos -->
-    <g class="petalo-g" transform="rotate(0)"><use href="#petaloShape" class="petalo" data-frase="Eres mi sol en los días nublados ☀️"/></g>
- <g class="petalo-g" transform="rotate(22.5)"><use href="#petaloShape" class="petalo" data-frase="Tu sonrisa ilumina mi mundo, hasta en los días más grises ✨"/></g>
-<g class="petalo-g" transform="rotate(45)"><use href="#petaloShape" class="petalo" data-frase="Mis locuras van con tus locuras 🤭"/></g>
-<g class="petalo-g" transform="rotate(67.5)"><use href="#petaloShape" class="petalo" data-frase="Gracias por existir y por ser mi cómplice de aventuras 🌼"/></g>
-<g class="petalo-g" transform="rotate(90)"><use href="#petaloShape" class="petalo" data-frase="Eres un sueño hecho realidad 💫"/></g>
-<g class="petalo-g" transform="rotate(112.5)"><use href="#petaloShape" class="petalo" data-frase="Te pienso en cada 11:11, porque la amistad también es un deseo 🌟"/></g>
-<g class="petalo-g" transform="rotate(135)"><use href="#petaloShape" class="petalo" data-frase="Brillas con luz propia y eso inspira 🌸"/></g>
-<g class="petalo-g" transform="rotate(157.5)"><use href="#petaloShape" class="petalo" data-frase="Mi lugar favorito es a tu lado, riéndonos de cualquier cosa 💖"/></g>
-<g class="petalo-g" transform="rotate(180)"><use href="#petaloShape" class="petalo" data-frase="Me haces inmensamente feliz 🥰"/></g>
-<g class="petalo-g" transform="rotate(202.5)"><use href="#petaloShape" class="petalo" data-frase="Contigo todo es mejor, porque juntos somos imparables 🌻"/></g>
-<g class="petalo-g" transform="rotate(225)"><use href="#petaloShape" class="petalo" data-frase="Eres única e irremplazable 🌟"/></g>
-<g class="petalo-g" transform="rotate(247.5)"><use href="#petaloShape" class="petalo" data-frase="Cada día contigo es un regalo, y lo mejor es que somos amigos con superpoderes 🎁"/></g>
-<g class="petalo-g" transform="rotate(270)"><use href="#petaloShape" class="petalo" data-frase="Siempre pienso en vos 😘"/></g>
-<g class="petalo-g" transform="rotate(292.5)"><use href="#petaloShape" class="petalo" data-frase="Sos mi manca favoritaa, y mi partner en todo lo bueno 😄"/></g>
-<g class="petalo-g" transform="rotate(315)"><use href="#petaloShape" class="petalo" data-frase="Me vuelves cursi y feliz 🤭"/></g>
-<g class="petalo-g" transform="rotate(337.5)"><use href="#petaloShape" class="petalo" data-frase="Soy tu fan #1, aunque digamos que solo somos amigos... guiño guiño 💘"/></g>
+    <!-- 16 pétalos -->
+<g class="petalo-g" transform="rotate(0)">
+  <use href="#petaloShape" class="petalo" data-frase="Sos de esas personas que suman siempre, incluso en los días raros 🌼"/>
+</g>
 
-    </g>
+<g class="petalo-g" transform="rotate(22.5)">
+  <use href="#petaloShape" class="petalo" data-frase="Tenés una energía linda, de esas que se sienten ✨"/>
+</g>
+
+<g class="petalo-g" transform="rotate(45)">
+  <use href="#petaloShape" class="petalo" data-frase="Con vos se puede hablar en serio y también reírse de cualquier pavada 🤭"/>
+</g>
+
+<g class="petalo-g" transform="rotate(67.5)">
+  <use href="#petaloShape" class="petalo" data-frase="Me encanta lo clara y madura que sos para tu edad, se nota en todo lo que decís 💫"/>
+</g>
+
+<g class="petalo-g" transform="rotate(90)">
+  <use href="#petaloShape" class="petalo" data-frase="Tenés una forma muy linda de pensar y de ver las cosas 🌸"/>
+</g>
+
+<g class="petalo-g" transform="rotate(112.5)">
+  <use href="#petaloShape" class="petalo" data-frase="Me gusta hablar con vos la paso genial esas charlas de todo tipo en la madrugada 🌟"/>
+</g>
+
+<g class="petalo-g" transform="rotate(135)">
+  <use href="#petaloShape" class="petalo" data-frase="Sos auténtica, piola y copada, y eso hoy vale un montón ✨"/>
+</g>
+
+<g class="petalo-g" transform="rotate(157.5)">
+  <use href="#petaloShape" class="petalo" data-frase="Tu forma de ser te hace especial, posta 💖"/>
+</g>
+
+<g class="petalo-g" transform="rotate(180)">
+  <use href="#petaloShape" class="petalo" data-frase="Sos linda no solo por fuera, sino por cómo sos 🥰"/>
+</g>
+
+<g class="petalo-g" transform="rotate(202.5)">
+  <use href="#petaloShape" class="petalo" data-frase="Mis locuras van con tus locuras 🤭"/>
+</g>
+
+<g class="petalo-g" transform="rotate(225)">
+  <use href="#petaloShape" class="petalo" data-frase="Sos única y Brillas con luz propia y eso inspira solcitoo 🌸"/>
+</g>
+
+<g class="petalo-g" transform="rotate(247.5)">
+  <use href="#petaloShape" class="petalo" data-frase="Con tu buena onda hacés que todo sea más lindo 🎁"/>
+</g>
+
+<g class="petalo-g" transform="rotate(270)">
+  <use href="#petaloShape" class="petalo" data-frase="Siempre es lindo pensar en vos 😌"/>
+</g>
+
+<g class="petalo-g" transform="rotate(292.5)">
+  <use href="#petaloShape" class="petalo" data-frase="Sos mi manca favoritaa 😄"/>
+</g>
+
+<g class="petalo-g" transform="rotate(315)">
+  <use href="#petaloShape" class="petalo" data-frase="Con vos me sale ser cursi sin darme cuenta 🤭"/>
+</g>
+
+<g class="petalo-g" transform="rotate(337.5)">
+  <use href="#petaloShape" class="petalo" data-frase="Soy tu fan #1, porque personas como vos no sobran 💘"/>
+</g>
+  </g>
     <circle class="centro" cx="125" cy="125" r="35"/>
     <circle class="detalles-centro" cx="115" cy="115" r="8"/>
     <circle class="detalles-centro" cx="135" cy="120" r="10"/>
@@ -439,7 +495,7 @@ function lanzarCorazones(){
   setInterval(()=>{
     const corazon=document.createElement("div");
     corazon.classList.add("corazon");
-    corazon.textContent="💛";
+    corazon.textContent="💜";
     corazon.style.left=Math.random()*100+"vw";
     corazon.style.fontSize=(20+Math.random()*20)+"px";
     document.body.appendChild(corazon);
@@ -500,7 +556,7 @@ function lanzarFinal(){
     carta.style.transition = "transform 1s ease-out";
     void carta.offsetWidth; // forzar reflow
     carta.style.transform = "translate(-50%, -50%) scale(1) rotate(0deg)";
-contenidoCarta.textContent = "Para Milii. Todavía nos estamos conociendo, pero ya me gusta cómo se siente hablar con vos 💫. Tenés algo que alegra el día sin esfuerzo y que hace que una charla simple se vuelva especial. Me gusta descubrirte de a poco, reírnos, compartir boludeces y ver qué va pasando 😊. Sin apuros ni etiquetas, solo disfrutando este momento tan lindo. Ojalá hoy te regales sonrisas, calma y algo que te haga feliz 💛. Y si en algún momento pensás en mí, que sea con una sonrisa 😉✨.";
+contenidoCarta.textContent = "Para Solcito 🌻✨. De a poco nos vamos conociendo y eso es lo que más me gusta 💫💖. Hablar con vos se siente fácil y natural, como si el tiempo pasara sin avisar 🌷. Tenés una energía tan linda que se nota en cada palabra y en cada risa 😊✨. Me encanta compartir charlas, momentos simples y esas pequeñas locuras que hacen el día más lindo 🤭. Sin apurar nada, solo dejando que las cosas fluyan 🌹🌷. Ojalá hoy y siempre te sientas feliz, querida y acompañada 💕🌟. Siempre quiero lo mejor para vos, Solcitoo <33 🌞💖";
 
     setTimeout(() => { carta.classList.add("abierta"); }, 1000);
 
